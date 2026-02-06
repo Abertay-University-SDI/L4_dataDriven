@@ -10,8 +10,6 @@
 #pragma warning(pop)
 
 #include "Input.h"
-#include "AudioManager.h"
-#include "GameState.h"
 #include <string>
 #include <iostream>
 
@@ -19,8 +17,7 @@ class BaseLevel
 {
 public:
 
-	BaseLevel(sf::RenderWindow& hwnd, Input& in, GameState& gs, AudioManager& aud);
-	BaseLevel(sf::RenderWindow& hwnd);
+	BaseLevel(sf::RenderWindow& hwnd, Input& in);
 	virtual ~BaseLevel() = default;
 
 	virtual void handleInput(float dt) = 0;
@@ -35,7 +32,6 @@ protected:
 	// Dependencies stored as references as we need these but do not own them (therefore should not destroy them)
 	sf::RenderWindow& m_window;
 	Input& m_input;
-	GameState& m_gameState;
-	AudioManager& m_audio;
+
 };
 

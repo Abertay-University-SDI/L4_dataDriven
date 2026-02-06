@@ -1,8 +1,8 @@
 #include "BaseLevel.h"
 
 // Use a member initialiser list to initialise the references
-BaseLevel::BaseLevel(sf::RenderWindow& window, Input& input, GameState& gameState, AudioManager& audio)
-	: m_window(window), m_input(input), m_gameState(gameState), m_audio(audio)
+BaseLevel::BaseLevel(sf::RenderWindow& window, Input& input)
+	: m_window(window), m_input(input)
 {
 	// Constructor body can be empty if the initialiser list does everything
 }

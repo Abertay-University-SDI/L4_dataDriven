@@ -7,8 +7,6 @@
 
 #include <iostream>
 #include "Level.h"
-#include "Framework/AudioManager.h"
-#include "Framework/GameState.h"
 
 #ifndef SFML_VERSION_MAJOR
 	#error "SFML 3 is required for this framework."
@@ -74,16 +72,14 @@ void windowProcess(sf::RenderWindow& window, Input& in)
 int main()
 {
 	//Create the window
-	sf::RenderWindow window(sf::VideoMode({ 800, 600 }), "cmp105 framework");
+	sf::RenderWindow window(sf::VideoMode({ 600, 400 }), "cmp105 framework");
 	window.setVerticalSyncEnabled(true);
 
 	// Initialise input and manager objects.
-	AudioManager audioManager;
 	Input input;
-	GameState gameState;
 
 	// Create level objects that may reference manager objects
-	Level level(window, input, gameState, audioManager);
+	Level level(window, input);
 
 	// Initialise objects for delta time
 	sf::Clock clock;
